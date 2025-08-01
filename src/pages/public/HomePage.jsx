@@ -12,7 +12,7 @@ const HomePage = () => {
       <HeroSection />
 
       {/* Trust Signals Section */}
-      <TrustSignals />
+      {/* <TrustSignals /> */}
 
       {/* Featured Categories Section */}
       <FeaturedCategories />

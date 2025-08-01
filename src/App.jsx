@@ -7,7 +7,7 @@ import Footer from './components/common/Footer';
 import HomePage from './pages/public/HomePage';
 import LoginPage from './pages/public/LoginPage';
 import RegisterPage from './pages/public/RegisterPage';
-
+import HowItWorksPage from './pages/public/HowItWorksPage';
 
 // Import Seller Pages
 import SellerDashboardPage from './pages/seller/SellerDashboardPage';
@@ -108,6 +108,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
             {/* Public navigation links from Navbar/Hero */}

@@ -156,7 +156,61 @@ const OffersBidsPage = () => {
                     </Button>
                   </div>
                 ) : (
-                  <Table>{/* Table contents remain same */}</Table>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Product</TableHead>
+                        <TableHead>Buyer</TableHead>
+                        <TableHead>Type</TableHead>
+                        <TableHead>Amount</TableHead>
+                        <TableHead>Quantity</TableHead>
+                        <TableHead>Status</TableHead>
+                        <TableHead>Date</TableHead>
+                        <TableHead className="text-right">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {offers.map((offer) => (
+                        <TableRow key={offer.id}>
+                          <TableCell className="font-medium">
+                            <a href={`/product/${offer.listingId}`} className="text-blue-600 hover:underline">
+                              {offer.productName}
+                            </a>
+                          </TableCell>
+                          <TableCell>{offer.buyer}</TableCell>
+                          <TableCell>{offer.type}</TableCell>
+                          <TableCell>{offer.amount}</TableCell>
+                          <TableCell>{offer.quantity}</TableCell>
+                          <TableCell>
+                            <Badge variant={getStatusVariant(offer.status)} className="rounded-full px-2 py-1">
+                              {offer.status}
+                            </Badge>
+                          </TableCell>
+                          <TableCell>{offer.date}</TableCell>
+                          <TableCell className="text-right">
+                            {offer.status === 'Pending' && (
+                              <>
+                                <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-800" onClick={() => handleAction('accept', offer)}>
+                                  <Check className="h-4 w-4 mr-1" /> Accept
+                                </Button>
+                                <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-800 ml-2" onClick={() => handleAction('reject', offer)}>
+                                  <X className="h-4 w-4 mr-1" /> Reject
+                                </Button>
+                                <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-800 ml-2" onClick={() => handleAction('counter', offer)}>
+                                  <Reply className="h-4 w-4 mr-1" /> Counter
+                                </Button>
+                              </>
+                            )}
+                            {(offer.status === 'Accepted' || offer.status === 'Countered') && (
+                              <Button variant="ghost" size="sm" onClick={() => navigate(`/seller/order-details/${offer.id}`)}>
+                                View Order
+                              </Button>
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
                 )}
               </CardContent>
             </Card>

@@ -23,14 +23,14 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
           <Button
             className="w-full sm:w-auto px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-blue-600 hover:bg-blue-700 text-white"
-            onClick={() => navigate('/for-sellers')} // Use navigate hook
+            onClick={() => navigate('/login')} // Use navigate hook
           >
             Sell Excess Inventory
           </Button>
           <Button
             variant="outline"
             className="w-full sm:w-auto px-8 py-3 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-blue-600 text-blue-600 hover:bg-blue-50"
-            onClick={() => navigate('/search-inventory')} // Use navigate hook
+            onClick={() => navigate('/login')} // Use navigate hook
           >
             Browse Inventory
           </Button>

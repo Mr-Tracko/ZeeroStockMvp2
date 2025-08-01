@@ -20,10 +20,10 @@ const Navbar = () => {
           <a href="/how-it-works" className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200">
             How It Works
           </a>
-          <a href="/for-sellers" className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200">
+          <a href="/login" className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200">
             For Sellers
           </a>
-          <a href="/for-buyers" className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200">
+          <a href="/login" className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200">
             For Buyers
           </a>
           <a href="/support" className="text-gray-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200">
